@@ -267,7 +267,8 @@ class Qutepart(QPlainTextEdit):
         self._indenter = Indenter(self)
         self._lineLengthEdge = None
         self._lineLengthEdgeColor = QColor(255, 0, 0, 128)
-        self._currentLineColor = QColor('#ffffa3')
+#        self._currentLineColor = QColor('#ffffa3')
+        self._currentLineColor = QColor('#000088')
         self._atomicModificationDepth = 0
 
         self.drawIncorrectIndentation = True
@@ -284,8 +285,10 @@ class Qutepart(QPlainTextEdit):
         Hardcode same palette for not highlighted text
         """
         palette = self.palette()
-        palette.setColor(QPalette.Base, QColor('#ffffff'))
-        palette.setColor(QPalette.Text, QColor('#000000'))
+        #palette.setColor(QPalette.Base, QColor('#ffffff'))
+        #palette.setColor(QPalette.Text, QColor('#000000'))
+        palette.setColor(QPalette.Text, QColor('#ffffff'))
+        palette.setColor(QPalette.Base, QColor('#000000'))
         self.setPalette(palette)
 
         self._highlighter = None
@@ -312,7 +315,8 @@ class Qutepart(QPlainTextEdit):
         self._nonVimExtraSelections = []
         self._userExtraSelections = []  # we draw bracket highlighting, current line and extra selections by user
         self._userExtraSelectionFormat = QTextCharFormat()
-        self._userExtraSelectionFormat.setBackground(QBrush(QColor('#ffee00')))
+#        self._userExtraSelectionFormat.setBackground(QBrush(QColor('#ffee00')))
+        self._userExtraSelectionFormat.setBackground(QBrush(QColor('#D3D3D3')))
 
         self._lintMarks = {}
 
